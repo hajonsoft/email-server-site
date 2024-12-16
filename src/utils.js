@@ -8,5 +8,6 @@ export function getCleanHostname() {
     const cleanedHostname = hostname.replace(/\.[^.]+$/, '');
 
     // 3. Return the Cleaned Hostname
-    return cleanedHostname;
+    // Capitalize the first letter of the cleaned hostname
+    return cleanedHostname.charAt(0).toUpperCase() + cleanedHostname.slice(1);
 }

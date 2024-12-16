@@ -1,67 +1,40 @@
-import { Box, Grid, Typography, Link } from '@mui/material';
+import { Box, Grid, Typography, Link, useTheme } from '@mui/material';
+import { getCleanHostname } from '../utils';
+
+const siteName = getCleanHostname();
 
 function Footer() {
+  const theme = useTheme(); // Access the theme
+
   return (
     <Box
       sx={{
-        backgroundColor: '#93C572', // Set footer background color (can adjust)
-        color: 'white', // Set text color to white for contrast
+        backgroundColor: theme.palette.primary.main, // Use theme primary color
+        color: 'white',
         padding: '40px 20px',
-        marginTop: 'auto', // Ensure footer stays at the bottom of the page
+        marginTop: 'auto',
       }}
     >
       <Grid container spacing={4} justifyContent="space-between">
         {/* Left column: Site Name */}
         <Grid item xs={12} sm={4}>
           <Typography variant="h6" fontWeight="bold">
-            Harmonia Posta
+            {siteName}
           </Typography>
           <Typography variant="body2">
-            Discover the convenience of online communication with Harmonia Posta.
+            {`Discover the convenience of online communication with ${siteName}.`}
           </Typography>
         </Grid>
 
         {/* Center column: Quick Links */}
         <Grid item xs={12} sm={4}>
-          <Typography variant="h6" fontWeight="bold">
-            Quick Links
-          </Typography>
           <Box>
             <Link href="#" color="inherit" display="block" sx={{ marginBottom: '8px' }}>
               Home
             </Link>
-            <Link href="#" color="inherit" display="block" sx={{ marginBottom: '8px' }}>
-              About Us
-            </Link>
-            <Link href="#" color="inherit" display="block" sx={{ marginBottom: '8px' }}>
-              Services
-            </Link>
-            <Link href="#" color="inherit" display="block" sx={{ marginBottom: '8px' }}>
-              Blog
-            </Link>
           </Box>
         </Grid>
 
-        {/* Right column: Resources */}
-        <Grid item xs={12} sm={4}>
-          <Typography variant="h6" fontWeight="bold">
-            Resources
-          </Typography>
-          <Box>
-            <Link href="#" color="inherit" display="block" sx={{ marginBottom: '8px' }}>
-              Documentation
-            </Link>
-            <Link href="#" color="inherit" display="block" sx={{ marginBottom: '8px' }}>
-              API Reference
-            </Link>
-            <Link href="#" color="inherit" display="block" sx={{ marginBottom: '8px' }}>
-              Support Center
-            </Link>
-            <Link href="#" color="inherit" display="block" sx={{ marginBottom: '8px' }}>
-              Community Forum
-            </Link>
-          </Box>
-        </Grid>
       </Grid>
 
       {/* Bottom section: Contact Us */}
@@ -74,12 +47,12 @@ function Footer() {
         }}
       >
         <Typography variant="body2">
-          <Link href="mailto:contact@harmoniaposta.com" color="inherit">
-            contact@harmoniaposta.com
+          <Link href={`mailto:contact@${siteName}.com`} color="inherit">
+            {`contact@${siteName}.com`}
           </Link>
         </Typography>
         <Typography variant="body2" sx={{ marginTop: '8px' }}>
-          © {new Date().getFullYear()} Harmonia Posta. All rights reserved.
+          © {new Date().getFullYear()} {siteName} All rights reserved.
         </Typography>
       </Box>
     </Box>

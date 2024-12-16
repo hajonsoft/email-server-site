@@ -1,5 +1,4 @@
 // src/components/Discover.jsx
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import { Box, Container, Stack, Typography } from '@mui/material';
 import React from 'react';
 import discoverImage from '../assets/image/discover.jpg';
@@ -17,18 +16,12 @@ const Discover = () => {
             <Container maxWidth="md">
                 {/* Main Heading */}
                 <Typography variant="h2" sx={{ fontWeight: 'bold', mb: 4 }}>
-                    Discover the Convenience of Harmonia Posta: Your Exclusive
+                    Discover the Convenience of private email: Your Exclusive
                 </Typography>
-                <MailOutlineIcon
-                    sx={{
-                        fontSize: 40,
-                        color: '#ffa726',
-                        transform: 'translate(-50%, -50%)',
-                    }}
-                />
+                <Typography variant='h1' gutterBottom>Invite only email server</Typography>
                 {/* Subtitle */}
                 <Typography variant="body1" color="textSecondary" sx={{ mb: 2 }}>
-                    Harmonia Posta is an invite-only email server that offers a secure and
+                    Invite-only email server offers a secure and
                     private platform for individuals to manage their electronic communications.
                 </Typography>
                 <Stack
@@ -42,7 +35,7 @@ const Discover = () => {
                     <Box
                         component="img"
                         src={discoverImage}
-                        alt="Discover the convenience of Harmonia Posta"
+                        alt="Discover the convenience of private email"
                         sx={{
                             maxWidth: '100%',      // Ensure the image doesn't exceed the box width
                             maxHeight: '100%',     // Ensure the image doesn't exceed the box height

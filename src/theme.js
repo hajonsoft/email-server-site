@@ -1,16 +1,42 @@
-// src/theme.js
+import { grey } from '@mui/material/colors';
 import { createTheme } from '@mui/material/styles';
-import { green, grey } from '@mui/material/colors';
+import { getCleanHostname } from './utils';
+
+// Helper function to generate a unique integer from a string
+function hashCode(str) {
+  let hash = 0;
+  if (str.length === 0) return hash;
+  for (let i = 0; i < str.length; i++) {
+    let char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash; // Convert to 32bit integer
+  }
+  return hash;
+}
+
+
+function stringToColor(str) {
+  const hash = hashCode(str);
+  const r = (hash & 0xFF0000) >> 16;
+  const g = (hash & 0x00FF00) >> 8;
+  const b = hash & 0x0000FF;
+
+  return `#${(r.toString(16).padStart(2, '0'))}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+}
+
+
+const siteName = getCleanHostname();
+const primaryColor = stringToColor(siteName);
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#93C572', // Your custom green color for primary elements
-      light: green[200], // A lighter shade of green
-      dark: green[700],  // A darker shade of green for contrast
+      main: primaryColor, // Dynamic primary color
+      light: '#F0F8FF',  // A fixed light color, feel free to change this.
+      dark: '#191970',   // A fixed dark color, feel free to change this.
     },
     secondary: {
-      main: grey[100], // A light gray for secondary elements (good for backgrounds)
+      main: '#F0F8FF',  // Dynamic light color based on siteName
       light: grey[50],  // A very light gray for lighter backgrounds
       dark: grey[300],  // A medium gray for subtle contrasts
     },

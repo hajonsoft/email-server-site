@@ -1,6 +1,6 @@
-# Harmonia Posta
+# Invite only email server
 
-**Harmonia Posta** is an invite-only email server platform that offers a secure and private experience for individuals to manage their electronic communications.
+The invite-only email server platform offers a secure and private experience for individuals to manage their electronic communications.
 
 ## Table of Contents
 
@@ -18,7 +18,7 @@
 
 ## Project Overview
 
-Harmonia Posta is designed to be a secure, invite-only email platform tailored for professionals and individuals who value privacy. It provides a streamlined, user-friendly interface that makes managing email communications convenient and secure.
+The email server is designed to be a secure, invite-only email platform tailored for professionals and individuals who value privacy. It provides a streamlined, user-friendly interface that makes managing email communications convenient and secure.
 
 ## Features
 
@@ -40,6 +40,6 @@ Harmonia Posta is designed to be a secure, invite-only email platform tailored f
 
    ```bash
    git clone https://github.com/hajonsoft/email-server-site
-   cd your-repo-name
+   cd email-server-site
 ```
 

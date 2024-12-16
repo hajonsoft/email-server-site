@@ -5,9 +5,9 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Box } from '@mui/material';
 import MailIcon from '@mui/icons-material/MailOutline';
+import { getCleanHostname } from '../utils';
 
-// Get the site name from the environment variable, with a fallback.
-const siteName = process.env.REACT_APP_SITE_NAME || 'Mail Server';
+const siteName = getCleanHostname();
 
 const Header = () => (
     <AppBar position="static" color="primary" elevation={0}>

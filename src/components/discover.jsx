@@ -1,35 +1,47 @@
 // src/components/Discover.jsx
-import { Box, Container, Stack, Typography } from '@mui/material';
+import { Box, Container, Stack, Typography, Link } from '@mui/material';
 import React from 'react';
 import discoverImage from '../assets/image/discover.jpg';
+import EmailIcon from '@mui/icons-material/Email';
+const loginUrl = "https://giow1026.siteground.us/webmail/log-in";
 
 const Discover = () => {
     return (
         <Box
             pt={2}
             sx={{
-                backgroundColor: '#e0f7fa', // Light blue background similar to the image
+                backgroundColor: '#e0f7fa',
                 textAlign: 'center',
                 position: 'relative',
             }}
         >
             <Container maxWidth="md">
                 {/* Main Heading */}
-                <Typography variant="h2" sx={{ fontWeight: 'bold', mb: 4 }}>
+                <Typography variant="h2" sx={{ fontWeight: 'bold', mb: 1, pt: 2 }}>
                     Discover the Convenience of private email: Your Exclusive
                 </Typography>
-                <Typography variant='h1' gutterBottom>Invite only email server</Typography>
+                <Typography variant='h1' gutterBottom sx={{ mb: 1 }}>Invite only email server</Typography>
+                  {/* Login Link and Explanation */}
+                  <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mb: 2}}>
+                    <Typography variant="body1"  color="textSecondary" sx={{ mb: 1 }} >
+                        Ready to access your private email?
+                    </Typography>
+                     <Link href={loginUrl} color="primary"  sx={{ display: 'flex', alignItems: 'center', '&:hover': { textDecoration: 'underline'} }}>
+                           <EmailIcon sx={{mr:1}} /> Login to your Email Here
+                     </Link>
+                  </Box>
+
                 {/* Subtitle */}
                 <Typography variant="body1" color="textSecondary" sx={{ mb: 2 }}>
                     Invite-only email server offers a secure and
                     private platform for individuals to manage their electronic communications.
                 </Typography>
                 <Stack
-                    justifyContent="center"  // Horizontally center the content
-                    alignItems="center"      // Vertically center the content
+                    justifyContent="center"
+                    alignItems="center"
                     sx={{
-                        maxWidth: '100vw',      // Ensure the stack doesn't extend beyond the viewport width
-                        overflow: 'hidden',     // Hide any content that overflows
+                        maxWidth: '100vw',
+                        overflow: 'hidden',
                     }}
                 >
                     <Box
@@ -37,9 +49,9 @@ const Discover = () => {
                         src={discoverImage}
                         alt="Discover the convenience of private email"
                         sx={{
-                            maxWidth: '100%',      // Ensure the image doesn't exceed the box width
-                            maxHeight: '100%',     // Ensure the image doesn't exceed the box height
-                            objectFit: 'contain',  // Keep the image aspect ratio intact while scaling
+                            maxWidth: '100%',
+                            maxHeight: '100%',
+                            objectFit: 'contain',
                         }}
                     />
                 </Stack>

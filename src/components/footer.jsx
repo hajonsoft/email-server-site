@@ -1,12 +1,13 @@
 import { Box, Grid, Typography, Link, useTheme, IconButton } from '@mui/material';
 import { getCleanHostname } from '../utils';
 import LoginIcon from '@mui/icons-material/Login';
+import { useConfig } from '../useConfig';
 
 const siteName = getCleanHostname();
-const loginUrl = "https://giow1026.siteground.us/webmail/log-in";
 
 function Footer() {
   const theme = useTheme();
+  const {config} = useConfig();
 
   return (
     <Box
@@ -37,7 +38,7 @@ function Footer() {
                  <IconButton
                     color="inherit"
                     aria-label="login"
-                    onClick={() => window.location.href = loginUrl}
+                    onClick={() => window.location.href = config.loginUrl}
                     sx={{
                       backgroundColor: 'rgba(255, 255, 255, 0.1)', // Add a subtle background to the icon button
                       borderRadius: '50%', // Make it circular
@@ -71,7 +72,7 @@ function Footer() {
         </Typography>
 
         <Typography variant="body2" sx={{ marginTop: '8px' }}>
-           <Link href={loginUrl} color="inherit">Sign in</Link>
+           <Link href={config.loginUrl} color="inherit">Sign in</Link>
         </Typography>
         <Typography variant="body2" sx={{ marginTop: '8px' }}>
           © {new Date().getFullYear()} {siteName} All rights reserved.

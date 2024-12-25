@@ -3,12 +3,10 @@ import EmailIcon from '@mui/icons-material/Email';
 import { Box, Container, Link, Stack, Typography } from '@mui/material';
 import React from 'react';
 import discoverImage from '../assets/image/discover.jpg';
-import { useConfig } from '../useConfig';
-
+import { loginUrl } from '../config';
 
 const Discover = () => {
-    const { config } = useConfig();
-    const loginUrl = config.loginUrl;
+
 
     return (
         <Box

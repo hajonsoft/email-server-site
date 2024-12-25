@@ -7,12 +7,11 @@ import { Box, Button } from '@mui/material';
 import MailIcon from '@mui/icons-material/MailOutline';
 import LoginIcon from '@mui/icons-material/Login';
 import { getCleanHostname } from '../utils';
-import { useConfig } from '../useConfig';
+import { loginUrl, friendlyName } from '../config';
 
 const siteName = getCleanHostname();
 const Header = () => {
 
-    const { config } = useConfig();
 
     return (
         <AppBar position="static" color="primary" elevation={0}>
@@ -20,7 +19,7 @@ const Header = () => {
                 <Box display="flex" alignItems="center" gap={1}>
                     <MailIcon sx={{ color: 'white', fontSize: 28 }} />
                     <Typography variant="h1" color="inherit">
-                        {siteName}
+                        {friendlyName || siteName}
                     </Typography>
                 </Box>
 
@@ -28,7 +27,7 @@ const Header = () => {
                     variant="outlined"
                     color="inherit"
                     startIcon={<LoginIcon />}
-                    onClick={() => window.location.href = config.loginUrl}
+                    onClick={() => window.location.href = loginUrl}
                 >
                     Login
                 </Button>

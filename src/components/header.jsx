@@ -1,5 +1,5 @@
 // src/components/Header.jsx
-import React from 'react';
+import React, {useEffect} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -11,6 +11,12 @@ import { loginUrl, friendlyName } from '../config';
 
 const siteName = getCleanHostname();
 const Header = () => {
+
+    useEffect(() => {
+        // Set the document title dynamically
+        document.title = friendlyName + " - Private Email"; // You can append other info here
+      }, []); // Empty dependency array to run only once on component mount
+    
 
 
     return (

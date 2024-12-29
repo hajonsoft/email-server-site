@@ -1,9 +1,10 @@
 import LoginIcon from '@mui/icons-material/Login';
 import { Box, Grid, IconButton, Link, Typography, useTheme } from '@mui/material';
 import { friendlyName, loginUrl } from '../config';
-import { getCleanHostname } from '../utils';
+import { getCleanHostname, getDomainExtension } from '../utils';
 
 const siteName = getCleanHostname();
+const siteExtension = getDomainExtension();
 
 function Footer() {
   const theme = useTheme();
@@ -65,8 +66,8 @@ function Footer() {
         }}
       >
         <Typography variant="body2">
-          <Link href={`mailto:contact@${friendlyName || siteName}.com`} color="inherit">
-            {`contact@${friendlyName || siteName}.com`}
+          <Link href={`mailto:contact@${friendlyName || siteName}.${siteExtension}`} color="inherit">
+            {`contact@${friendlyName || siteName}.${siteExtension}`}
           </Link>
         </Typography>
 

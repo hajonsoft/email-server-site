@@ -1,3 +1,3 @@
-export const loginUrl="https://giow1026.siteground.us/webmail/log-in"
-export const friendlyName=""
+export const loginUrl="https://gvam1271.siteground.biz/webmail/mail/"
+export const friendlyName="UKEmailHub"
 export const companyName=""

@@ -1,3 +1,3 @@
-export const loginUrl="https://giow1026.siteground.us/webmail/log-in"
-export const friendlyName=""
+export const loginUrl="https://gtxm1219.siteground.biz/webmail/mail"
+export const friendlyName="CloudGmails"
 export const companyName=""
